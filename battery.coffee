@@ -8,8 +8,14 @@ render: (output, domEl) ->
   state = values[0]
   batnum = parseInt(values[1]);
 
-  if state != 'discharging'
+  if state != 'discharging' and batnum >= 90
     htmlString = "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state != 'discharging' and batnum >= 50 and batnum < 90
+    htmlString = "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state != 'discharging' and batnum < 50 and batnum >= 15
+    htmlString = "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state != 'discharging' and batnum < 15
+    htmlString = "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 90
     htmlString = "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
@@ -38,9 +44,9 @@ style: """
   .charging
     color: #FFFFFF
     position: relative
-    font: 10px fontawesome
-    top: 0px
-    right: -12px
+    font: 8px fontawesome
+    top: -1px
+    right: -11px
 
 i {
       font-size: 80%
