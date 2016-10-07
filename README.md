@@ -56,7 +56,6 @@ This widget is derived from the [Morning widget by imRohan](https://github.com/i
 
 ### To do
 
-* Split apart the wifi widget from the weather widget
 * Make improvements to the morning.coffee widget
 * Add launch functionality by clicking icons
 * Create imessage widget to display unread messages

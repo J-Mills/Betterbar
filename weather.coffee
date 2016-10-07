@@ -110,7 +110,7 @@ render: (output, domEl) ->
   if connum isnt 99
     htmlString += "<span class='green icon'>&nbsp&nbsp</span>";
   if connum is 99
-    htmlString = "<span class='grey icon'>&nbsp&nbsp</span>";
+    htmlString = "<span class='grey icon move'>&nbsp&nbsp</span>";
   else
     htmlString += "<span class ='yellow'></span>";
 
@@ -121,9 +121,11 @@ style: """
   top: 2px
   right: 347px
   color: #D5C4A1
-  overflow: hidden
   .icon
     font: 11px fontawesome
+  .move
+    position: relative
+    top: 3px
   .weather
     font: 11px WeatherIcons-Regular
   .blue

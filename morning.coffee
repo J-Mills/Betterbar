@@ -4,20 +4,23 @@ command: "finger `whoami`"
 
 
 #Refresh time (default: 1/2 minute 30000)
-refreshFrequency: 1000 * 60
+refreshFrequency: (1000 * 60)
 
 
 #Body Style
 style: """
 
   top: 5px
-  left: 10px
+  left: 6px
   width: 1000px
 
   .text
    -webkit-font-smoothing: antialiased
    color: #458588
    font: 11px Osaka-Mono
+  .icon
+    font: 11px fontawesome
+    color: grey
 
 """
 
@@ -51,4 +54,4 @@ update: (output, domEl) ->
   timeSegment = segments[3] if  hour <= 4
 
   #DOM manipulation
-  $(domEl).find('.salutation').text("Good #{timeSegment}, Jack.")
+  $(domEl).find('.salutation').html("<span><span class='icon'> &nbsp</span>Good #{timeSegment}, Jack.</span>")
